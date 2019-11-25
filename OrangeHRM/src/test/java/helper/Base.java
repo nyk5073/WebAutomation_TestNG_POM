@@ -45,7 +45,7 @@ public WebDriver driver;
 	  }
 	
 	@AfterClass
-    public void quitbrowser(){
+    	public void quitbrowser(){
 		driver.quit();
 	  }
 
