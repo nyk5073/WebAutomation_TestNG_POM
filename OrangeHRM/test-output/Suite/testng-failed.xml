@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <test thread-count="1" name="Login">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="Port" value="5555"/>
+  <test name="Chrome Test">
+    <parameter name="Port" value="27621"/>
     <classes>
       <class name="test_cases.Login"/>
     </classes>
-  </test> <!-- Login -->
+  </test> <!-- Chrome Test -->
+  <test name="Firefox Test">
+    <parameter name="Port" value="5555"/>
+    <classes>
+      <class name="test_cases.Login"/>
+    </classes>
+  </test> <!-- Firefox Test -->
+  <test name="Firefox Test(failed)" parallel="tests">
+    <parameter name="Port" value="5555"/>
+    <classes>
+      <class name="test_cases.Login">
+        <methods>
+          <include name="login"/>
+          <include name="StartBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="quitbrowser"/>
+          <include name="quitbrowser"/>
+        </methods>
+      </class> <!-- test_cases.Login -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
