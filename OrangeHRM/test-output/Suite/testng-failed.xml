@@ -1,31 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <parameter name="Port" value="5555"/>
-  <test name="Chrome Test">
-    <parameter name="Port" value="27621"/>
+  <parameter name="os" value="mac"/>
+  <parameter name="Port" value="48776"/>
+  <test name="Windows Chrome Test">
+    <parameter name="os" value="windows"/>
+    <parameter name="Port" value="27532"/>
     <classes>
       <class name="test_cases.Login"/>
     </classes>
-  </test> <!-- Chrome Test -->
-  <test name="Firefox Test">
-    <parameter name="Port" value="5555"/>
+  </test> <!-- Windows Chrome Test -->
+  <test name="Windows Firefox Test">
+    <parameter name="os" value="windows"/>
+    <parameter name="Port" value="48776"/>
     <classes>
       <class name="test_cases.Login"/>
     </classes>
-  </test> <!-- Firefox Test -->
-  <test name="Firefox Test(failed)" parallel="tests">
-    <parameter name="Port" value="5555"/>
+  </test> <!-- Windows Firefox Test -->
+  <test name="Mac Chrome Test">
+    <parameter name="os" value="mac"/>
+    <parameter name="Port" value="27532"/>
+    <classes>
+      <class name="test_cases.Login"/>
+    </classes>
+  </test> <!-- Mac Chrome Test -->
+  <test name="Mac Firefox Test">
+    <parameter name="os" value="mac"/>
+    <parameter name="Port" value="48776"/>
+    <classes>
+      <class name="test_cases.Login"/>
+    </classes>
+  </test> <!-- Mac Firefox Test -->
+  <test name="Windows Firefox Test(failed)" parallel="tests">
+    <parameter name="os" value="windows"/>
+    <parameter name="Port" value="48776"/>
     <classes>
       <class name="test_cases.Login">
         <methods>
           <include name="login"/>
           <include name="StartBrowser"/>
           <include name="StartBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="quitbrowser"/>
+          <include name="quitbrowser"/>
           <include name="quitbrowser"/>
           <include name="quitbrowser"/>
         </methods>
       </class> <!-- test_cases.Login -->
     </classes>
-  </test> <!-- Firefox Test(failed) -->
+  </test> <!-- Windows Firefox Test(failed) -->
+  <test name="Mac Chrome Test(failed)" parallel="tests">
+    <parameter name="os" value="mac"/>
+    <parameter name="Port" value="27532"/>
+    <classes>
+      <class name="test_cases.Login">
+        <methods>
+          <include name="login"/>
+          <include name="StartBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="quitbrowser"/>
+          <include name="quitbrowser"/>
+          <include name="quitbrowser"/>
+          <include name="quitbrowser"/>
+        </methods>
+      </class> <!-- test_cases.Login -->
+    </classes>
+  </test> <!-- Mac Chrome Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
