@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" name="Suite" parallel="tests">
-	
-	<test name="Chrome Test">
-	<parameter name="Port" value="27621"/>
+	<test name="Windows Chrome Test">
+	<parameter name="Port" value="27532"/>
+	<parameter name="os" value="windows"/>
 	<classes>
-      <class name="test_cases.Login"/>      
+      <class name="test_cases.Login"/>
     </classes>
   	</test>
-  	
-  	<test name="Firefox Test">
-	<parameter name="Port" value="5555"/>
+  	<test name="Windows Firefox Test">
+	<parameter name="Port" value="48776"/>
+	<parameter name="os" value="windows"/>
     <classes>
-      <class name="test_cases.Login"/>      
+      <class name="test_cases.Login"/>
     </classes>
   	</test>
-  
+  	<test name="Mac Chrome Test">
+	<parameter name="Port" value="27532"/>
+	<parameter name="os" value="mac"/>
+	<classes>
+      <class name="test_cases.Login"/>
+    </classes>
+  	</test>
+  	<test name="Mac Firefox Test">
+	<parameter name="Port" value="48776"/>
+	<parameter name="os" value="mac"/>
+    <classes>
+      <class name="test_cases.Login"/>
+    </classes>
+  	</test>
 </suite>

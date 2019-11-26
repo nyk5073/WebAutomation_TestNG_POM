@@ -14,9 +14,11 @@ public class Landingpage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(name="txtUsername") static WebElement userName;
-	@FindBy(name="txtPassword") static WebElement password;
+	
+	@FindBy(id="txtUsername") static WebElement userName;
+	@FindBy(id="txtPassword") static WebElement password;
 	@FindBy(id="btnLogin") static WebElement loginBtn;
+	
 	
 	public void userLogsIn(String Username, String Password) {
 		userName.sendKeys(Username);

@@ -14,8 +14,8 @@ WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(linkText="Welcome Admin") static WebElement WelcomeLink;
-	@FindBy(linkText="Logout") static WebElement LogoutLink;
+	@FindBy(id="welcome") static WebElement WelcomeLink;
+	@FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]") static WebElement LogoutLink;
 	
 	public void userLogsOut() throws InterruptedException {
 		WelcomeLink.click();
